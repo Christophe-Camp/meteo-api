@@ -1,10 +1,10 @@
-let url = "https://api.open-meteo.com/v1/forecast?latitude=44.8404&longitude=-0.5805&daily=sunrise,sunset,weather_code,temperature_2m_max,apparent_temperature_min,temperature_2m_min,apparent_temperature_max&hourly=temperature_2m,rain,precipitation,weather_code&current=temperature_2m,wind_speed_10m,is_day,weather_code,wind_direction_10m,precipitation,rain&timezone=auto"
+let url = "https://api.open-meteo.com/v1/forecast?latitude=43.6109&longitude=3.8763&daily=sunrise,sunset,weather_code,temperature_2m_max,apparent_temperature_min,temperature_2m_min,apparent_temperature_max&hourly=temperature_2m,rain,precipitation,weather_code&current=temperature_2m,wind_speed_10m,is_day,weather_code,wind_direction_10m,precipitation,rain&timezone=auto"
 fetch(url)                   // on vient lier le fichier json apres avec le 1 er then on vien verifier si le fichier est bien charger 
   .then (function(response){
   return response.json();
   })
   .then(function(donnees){               // on viens chercher la fonction afficher liste
-   console.log(donnees);
+   //console.log(donnees);
     let temperature = donnees.current.temperature_2m; //temperature
     let codeMeteo = donnees.current.weather_code; // Le code météo
     let jourNuit = donnees.current.is_day;  //le jour ou la nuit
@@ -19,8 +19,8 @@ fetch(url)                   // on vient lier le fichier json apres avec le 1 er
    
     let latitude = donnees.latitude;
     let longitude = donnees.longitude;
-    console.log(latitude);
-    console.log(longitude);
+    //console.log(latitude);
+    //console.log(longitude);
 
     if (jourNuit === 1){
         document.getElementById("jourNuit").innerHTML =
@@ -50,14 +50,15 @@ let weatherBackgrounds = {                                          // Correspon
   4: "url('assets/images/thunder.jpg')",  // Orageux
   5: "url('assets/images/snow.jpg')"    // Neigeux
 };
-
+console.log(codeMeteo);
 document.body.style.backgroundImage = weatherBackgrounds[codeMeteo] || "url('assets/images/cloud.jpg')";// Mettre à jour le fond d'écran en fonction du code météo
 
 document.getElementById("previsionJour").innerHTML =                    // Afficher la prévision du jour avec la température et une description
-  getWeatherDescription(codeMeteo)+" <br>" + temperature + "°C";
+getWeatherDescription(codeMeteo)+" <br>" + temperature + "°C";
 
 function getWeatherDescription(code) {                                  // Fonction pour obtenir la description du temps en fonction du code
-    switch (code) {
+  console.log(code);  
+  switch (code) {
         case 0:
             return "Ensoleillé <img id='weatherIcon' src='assets/images/pictos/sun.png' alt='Météo'>";
         case 1:

@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .container {
   display: grid;
+  padding: 0 2rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.2fr 0.7fr 0.6fr 0.5fr 0.5fr;
   gap: 2rem;
@@ -167,6 +168,7 @@ body {
   display: flex;
   flex-wrap: nowrap; /* Ne pas passer à la ligne */
   gap: 0.6rem; /* Espacement entre les éléments */
+  padding-left: 0.5rem;
 }
 
 .carousel div {
@@ -202,11 +204,14 @@ body {
   padding: 1rem;
 }
 
-/*@media(max-width:767px){
-    #previsionSemaine{
-        width: 30%;
-    }
+@media (max-width: 767px) {
+  #previsionSemaine {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 0.5rem;
+    padding: 0;
+  }
 }
-*/
 
 /*# sourceMappingURL=main.css.map */
