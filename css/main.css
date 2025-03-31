@@ -1,4 +1,94 @@
 @charset "UTF-8";
+body {
+  background-size: cover; /* L'image de fond couvre toute la page */
+  background-position: center; /* L'image est centrée */
+  background-repeat: no-repeat; /* L'image ne se répète pas */
+}
+
+.vide-1, .vide-2 {
+  background-color: #2783A0;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: column; /* Organise les éléments en colonne */
+  justify-content: center; /* Centre le contenu verticalement */
+  align-items: center; /* Centre le contenu horizontalement */
+  height: 100%; /* Assure que l'élément prend toute la hauteur de son parent */
+  gap: 1rem; /*marge entre tout les elements*/
+}
+
+.jour {
+  font-weight: bold; /* Mettre en gras le jour */
+  font-size: 1.6em; /* Taille de la police pour le jour */
+}
+
+.jour-nuit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Assure que l'élément prend toute la hauteur de son parent */
+}
+
+.temperature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.temperature img {
+  width: 50%;
+  padding: 2rem;
+}
+
+.vent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; /* Centrer le texte dans le conteneur */
+  height: auto;
+  width: 100%;
+}
+
+#compass-container {
+  position: relative;
+  width: 100%; /* Largeur du fond de la boussole */
+  height: 12.5rem; /* Hauteur du fond de la boussole */
+}
+
+#compass-background {
+  width: 40%;
+  height: 12.5rem;
+}
+
+#compass-needle {
+  position: absolute;
+  top: 50%; /* Centrer l'aiguille */
+  left: 50%; /* Centrer l'aiguille */
+  transform-origin: 50% 50%; /* Centre l'aiguille pour qu'elle tourne autour de son centre */
+  transform: translate(-50%, -50%); /* Centrer l'aiguille */
+  width: 4%; /* Largeur de l'aiguille (ajuste la taille selon ton image) */
+  height: 6.25rem; /* Hauteur de l'aiguille (ajuste la taille selon ton image) */
+}
+
+#previsionSemaine {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  #previsionSemaine {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 0.5rem;
+  }
+}
 .container {
   display: grid;
   padding: 0 2rem;
@@ -80,79 +170,18 @@
   grid-area: jour-semaine;
 }
 
-body {
-  background-size: cover; /* L'image de fond couvre toute la page */
-  background-position: center; /* L'image est centrée */
-  background-repeat: no-repeat; /* L'image ne se répète pas */
+.prevision-card {
+  background-color: rgba(132, 164, 192, 0.5);
+  border-radius: 10px;
+  text-align: center;
+  width: 15%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  line-height: 2rem;
 }
 
-.vide-1, .vide-2 {
-  background-color: #2783A0;
-}
-
-.date-time {
-  display: flex;
-  flex-direction: column; /* Organise les éléments en colonne */
-  justify-content: center; /* Centre le contenu verticalement */
-  align-items: center; /* Centre le contenu horizontalement */
-  height: 100%; /* Assure que l'élément prend toute la hauteur de son parent */
-  gap: 1rem; /*marge entre tout les elements*/
-}
-
-.jour {
-  font-weight: bold; /* Mettre en gras le jour */
-  font-size: 1.6em; /* Taille de la police pour le jour */
-}
-
-.jour-nuit {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto; /* Assure que l'élément prend toute la hauteur de son parent */
-}
-
-.temperature {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-}
-
-.temperature img {
-  width: 50%;
-  padding: 2rem;
-}
-
-.vent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center; /* Centrer le texte dans le conteneur */
-  height: auto;
-  width: 100%;
-}
-
-#compass-container {
-  position: relative;
-  width: 100%; /* Largeur du fond de la boussole */
-  height: 12.5rem; /* Hauteur du fond de la boussole */
-}
-
-#compass-background {
+.prevision-card img {
   width: 40%;
-  height: 12.5rem;
-}
-
-#compass-needle {
-  position: absolute;
-  top: 50%; /* Centrer l'aiguille */
-  left: 50%; /* Centrer l'aiguille */
-  transform-origin: 50% 50%; /* Centre l'aiguille pour qu'elle tourne autour de son centre */
-  transform: translate(-50%, -50%); /* Centrer l'aiguille */
-  width: 4%; /* Largeur de l'aiguille (ajuste la taille selon ton image) */
-  height: 6.25rem; /* Hauteur de l'aiguille (ajuste la taille selon ton image) */
+  padding: 1rem;
 }
 
 #carousel-container {
@@ -181,37 +210,6 @@ body {
   background-color: rgba(132, 164, 192, 0.5);
   border-radius: 0.6rem;
   line-height: 2rem;
-}
-
-#previsionSemaine {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.prevision-card {
-  background-color: rgba(132, 164, 192, 0.5);
-  border-radius: 10px;
-  text-align: center;
-  width: 15%;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  line-height: 2rem;
-}
-
-.prevision-card img {
-  width: 40%;
-  padding: 1rem;
-}
-
-@media (max-width: 767px) {
-  #previsionSemaine {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    gap: 0.5rem;
-    padding: 0;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

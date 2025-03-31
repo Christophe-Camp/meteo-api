@@ -1,4 +1,4 @@
-let url = "https://api.open-meteo.com/v1/forecast?latitude=43.6109&longitude=3.8763&daily=sunrise,sunset,weather_code,temperature_2m_max,apparent_temperature_min,temperature_2m_min,apparent_temperature_max&hourly=temperature_2m,rain,precipitation,weather_code&current=temperature_2m,wind_speed_10m,is_day,weather_code,wind_direction_10m,precipitation,rain&timezone=auto"
+let url = "https://api.open-meteo.com/v1/forecast?latitude=43.6109&longitude=3.8763&daily=sunrise,sunset,weather_code,temperature_2m_max,apparent_temperature_min,temperature_2m_min,apparent_temperature_max&hourly=temperature_2m,rain,precipitation,weather_code&current=temperature_2m,wind_speed_10m,is_day,weather_code,wind_direction_10m,precipitation,rain&timezone=auto";
 fetch(url)                   // on vient lier le fichier json apres avec le 1 er then on vien verifier si le fichier est bien charger 
   .then (function(response){
   return response.json();
@@ -21,6 +21,9 @@ fetch(url)                   // on vient lier le fichier json apres avec le 1 er
     let longitude = donnees.longitude;
     //console.log(latitude);
     //console.log(longitude);
+    console.log(donnees.current.weather_code);
+    console.log(donnees.daily.weather_code);
+
 
     if (jourNuit === 1){
         document.getElementById("jourNuit").innerHTML =

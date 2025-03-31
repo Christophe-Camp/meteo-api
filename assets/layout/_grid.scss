@@ -1,0 +1,46 @@
+.container {  display: grid;
+    padding: 0 2rem ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.7fr 0.6fr 0.5fr 0.5fr;
+    gap: 2rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "date-time date-time temperature temperature vide-2 vide-2"
+      "date-time date-time temperature temperature vent vent"
+      "vide-1 jour-nuit temperature temperature vent vent"
+      "meteo-heure meteo-heure meteo-heure meteo-heure meteo-heure meteo-heure"
+      "jour-semaine jour-semaine jour-semaine jour-semaine jour-semaine jour-semaine";
+}
+  
+  .meteo-heure { grid-area: meteo-heure; }
+  
+  .date-time { grid-area: date-time; }
+  
+  .temperature { grid-area: temperature; }
+  
+  .vide-2 { grid-area: vide-2; }
+  
+  .vent { grid-area: vent; }
+  
+  .vide-1 { grid-area: vide-1; }
+  
+  .jour-nuit { grid-area: jour-nuit; }
+  
+  .jour-semaine { grid-area: jour-semaine; }
+  
+  
+.meteo-heure, .date-time, .temperature, .vide-2, .vent, .vide-1, .jour-nuit, .jour-semaine {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(132, 164, 192, 0.5);
+    border-radius: 10px;
+}
+
+  /* Individual zones */
+.meteo-heure { grid-area: meteo-heure; }
+.date-time { grid-area: date-time; }
+.temperature { grid-area: temperature; }
+.vide-2 { grid-area: vide-2; }
+.vent { grid-area: vent; }
+.vide-1 { grid-area: vide-1; }
+.jour-nuit { grid-area: jour-nuit; }
+.jour-semaine { grid-area: jour-semaine; }

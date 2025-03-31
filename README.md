@@ -75,4 +75,4 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=VOTRE_CLE_A
 
 👨‍💻 Auteur
 Projet développé par Christophe Camp
-🔗 GitHub
+[🔗 GitHub](https://github.com/Christophe-Camp)
